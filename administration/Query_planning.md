@@ -189,7 +189,7 @@ Query96的Query Plan分为五个Plan Fragment，编号从0~4。阅读Query Plan�
 
 对于Query96的Query Plan而言，Fragment 2， 3， 4功能类似，只是负责扫描的表不同。具体到查询中的Order/Aggregation/Join算子，都在Fragment 1中进行，下面着重介绍Fragment 1。
 
-Fragment 1集成了三个Join算子的执行，采用默认的BROADCAST方式进行执行，也就是小表向大表广播的方式进行，如果两个Join的表都是大表，建议采用SHUFFLE的方式进行。目前StarRocks只支持HASH JOIN，也就是采用哈希算法进行Join。图中有一个colocate字段，这个用来表述两张Join表采用同样的分区/分桶方式，如此，执行Join的过程可以直接在本地执行，不用进行数据的移动。Join执行完成之后，就是执行上层的Aggregation、Order by和TOP-N的算子，Query96的上述上个算子都比较浅显易懂，十分容易弄懂。
+Fragment 1集成了三个Join算子的执行，采用默认的BROADCAST方式进行执行，也就是小表向大表广播的方式进行，如果两个Join的表都是大表，建议采用SHUFFLE的方式进行。目前StarRocks只支持HASH JOIN，也就是采用哈希算法进行Join。图中有一个colocate字段，这个用来表述两张Join表采用同样的分区/分桶方式，如此，Join的过程可以直接在本地执行，不用进行数据的移动。Join执行完成之后，就是执行上层的Aggregation、Order by和TOP-N的算子，Query96的上述上个算子都比较浅显易懂，十分容易弄懂。
 
 至此，关于Query96的Query Plan的解释就告一段落，去掉具体的表达式，只保留算子的话，Query Plan可以以一个更加宏观的角度展示，就是下图。
 

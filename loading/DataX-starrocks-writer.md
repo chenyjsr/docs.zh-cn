@@ -109,7 +109,7 @@ StarRocksWriter 插件实现了写入数据到 StarRocks 的目的表的功能�
 
 * **loadUrl**
 
-  * 描述：StarRocks FE的地址用于Streamload，可以为多个fe地址，形如`fe_ip:fe_http_port`。
+  * 描述：StarRocks FE的地址用于StreamLoad，可以为多个fe地址，形如`fe_ip:fe_http_port`。
 
   * 必选：是
 
@@ -117,7 +117,7 @@ StarRocksWriter 插件实现了写入数据到 StarRocks 的目的表的功能�
 
 * **column**
 
-  * 描述：目的表需要写入数据的字段,字段之间用英文逗号分隔。例如: "column": ["id","name","age"]。
+  * 描述：目的表需要写入数据的字段，字段之间用英文逗号分隔。例如: "column": ["id","name","age"]。
 
    **column配置项必须指定，不能留空！**
 
@@ -206,10 +206,10 @@ StarRocksWriter 插件实现了写入数据到 StarRocks 的目的表的功能�
 
 ## 关于时区
 
-源tp库为其他时区时，执行datax.py时，命令行后面需要加如下参数
+源库与目标库时区不同时，执行datax.py，命令行后面需要加如下参数：
 
 ```json
 "-Duser.timezone=xx时区"
 ```
 
-e.g. DataX导入Postgrest数据，源库是UTC时间，通过在dataX启动时加参数 "-Duser.timezone=GMT+0"
+例如，DataX导入PostgreSQL中的数据，源库是UTC时间，在dataX启动时加参数 "-Duser.timezone=GMT+0"。

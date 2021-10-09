@@ -109,7 +109,7 @@ StarRocksWriter 插件实现了写入数据到 StarRocks 的目的表的功能�
 
 * **loadUrl**
 
-  * 描述：StarRocks FE的地址用于StreamLoad，可以为多个fe地址，形如`fe_ip:fe_http_port`。
+  * 描述：StarRocks FE的地址用于Streamload，可以为多个fe地址，形如`fe_ip:fe_http_port`。
 
   * 必选：是
 

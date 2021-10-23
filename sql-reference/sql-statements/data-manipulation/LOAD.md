@@ -2,7 +2,7 @@
 
 ## description
 
-Palo 目前支持以下4种导入方式：
+StarRocks 目前支持以下4种导入方式：
 
 ```plain text
 1. Hadoop Load：基于 MR 进行 ETL 的导入。

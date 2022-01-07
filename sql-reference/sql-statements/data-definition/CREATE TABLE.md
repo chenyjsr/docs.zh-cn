@@ -163,6 +163,7 @@ CREATE [EXTERNAL] TABLE [IF NOT EXISTS] [database.]table_name
         "type" = "doc"
     )
     ```
+    
     其中host为ES集群连接地址，可指定一个或者多个,user/password为开启basic认证的ES集群的用户名/密码，index是StarRocks中的表对应的ES的index名字，可以是alias，type指定index的type，默认是doc。
 
 3. 如果是 hive，则需要在 properties 提供以下信息：

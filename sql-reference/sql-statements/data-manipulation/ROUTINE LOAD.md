@@ -33,7 +33,7 @@ FROM data_source
     ```sql
     [COLUMNS TERMINATED BY '<terminator>'],
     [COLUMNS ([<column_name> [, ...] ] [, column_assignment [, ...] ] )],
-    [WHERE <expr>],
+    [WHERE <expr>]
     [PARTITION ([ <partition_name> [, ...] ])]
 
     column_assignment:
